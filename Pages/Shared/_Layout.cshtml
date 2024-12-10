@@ -4,40 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Foto</title>
-    <!-- Incluindo Google Fonts diretamente no head -->
     <link href="https://fonts.googleapis.com/css2?family=KoPub+Batang:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Estilos e recursos -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <style>
-        /* Estilo personalizado do menu */
         .navbar-custom {
-            background-color: #D1C6B4; /* Cor do menu personalizado */
-            font-family: 'KoPub Batang', serif; /* Fonte personalizada */
-            font-size: 16px; /* Tamanho da fonte */
+            background-color: #D1C6B4;
+            font-family: 'KoPub Batang', serif;
+            font-size: 16px;
         }
 
             .navbar-custom .nav-link {
-                color: #000; /* Texto preto */
+                color: #000;
             }
 
                 .navbar-custom .nav-link:hover {
-                    color: #555; /* Tom mais escuro no hover */
+                    color: #555;
                 }
 
-            /* Centralização do menu */
             .navbar-custom .navbar-nav {
                 margin: auto;
             }
 
-        /* Rodapé personalizado */
         footer {
             background-color: #F8F9FA;
             color: #000;
             text-align: center;
             padding: 20px 0;
-            font-family: 'KoPub Batang', serif; /* Fonte personalizada */
-            font-size: 16px; /* Tamanho da fonte */
+            font-family: 'KoPub Batang', serif;
+            font-size: 16px;
             padding-left: 15px;
         }
 
@@ -53,16 +48,12 @@
 </head>
 <body>
     <header>
-        <!-- Barra de Navegação -->
         <nav class="navbar navbar-expand-sm navbar-custom navbar-light border-bottom mb-3">
             <div class="container">
-                <!-- Botão para mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                         aria-expanded="false" aria-label="Alternar Navegação">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Links de navegação -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -86,14 +77,12 @@
         </nav>
     </header>
 
-    <!-- Conteúdo principal -->
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody() <!-- Renderiza o conteúdo específico de cada página -->
+            @RenderBody()
         </main>
     </div>
 
-    <!-- Rodapé -->
     <footer class="border-top">
         <div class="container">
             &copy; 2024 Foto | Desenvolvido por Kaio |
@@ -101,11 +90,9 @@
         </div>
     </footer>
 
-    <!-- Scripts necessários -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
