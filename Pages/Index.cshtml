@@ -1,96 +1,20 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Inicio";
+    ViewData["Title"] = "Início";
 }
 
-<div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="d-flex justify-content-center w-100">
-                <img src="./img/1.jpg" class="img">
-                <img src="./img/2.jpg" class="img">
-                <img src="./img/3.jpg" class="img">
-                <img src="./img/4.jpg" class="img">
-                <img src="./img/5.jpg" class="img">
-            </div>
-        </div>
+<!-- Carrossel -->
+<div class="carousel-container">
+    <div class="carousel-track">
+        <img src="./img/1.jpg" class="carousel-img" alt="Imagem 1">
+        <img src="./img/2.jpg" class="carousel-img" alt="Imagem 2">
+        <img src="./img/3.jpg" class="carousel-img" alt="Imagem 3">
+        <img src="./img/4.jpg" class="carousel-img" alt="Imagem 4">
+        <!-- Duplicação para criar um loop contínuo -->
+        <img src="./img/1.jpg" class="carousel-img" alt="Imagem 1 (duplicada)">
+        <img src="./img/2.jpg" class="carousel-img" alt="Imagem 2 (duplicada)">
+        <img src="./img/3.jpg" class="carousel-img" alt="Imagem 3 (duplicada)">
+        <img src="./img/4.jpg" class="carousel-img" alt="Imagem 4 (duplicada)">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-    </button>
 </div>
-
-<style>
-    .carousel {
-        width: 100%;
-    }
-
-    .carousel-inner {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .carousel-item {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .img {
-        width:500px; /* Ajuste a largura conforme necessário */
-        height: 800px;
-        transition: opacity 0.5s ease-in-out;
-        margin: 0 2px;
-    }
-
-    .carousel-item .img {
-        opacity: 0.5;
-    }
-
-    .carousel-item.active .img:nth-child(3) {
-        opacity: 1;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 5%;
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const carousel = document.querySelector('#customCarousel');
-        const totalItems = carouselItems.length;
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            carouselItems.forEach((item, index) => {
-                item.classList.remove('active');
-                if (index === currentIndex) {
-                    item.classList.add('active');
-                }
-            });
-        }
-
-        document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
-            updateCarousel();
-        });
-
-        document.querySelector('.carousel-control-next').addEventListener('click', () => {
-            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        });
-
-        // Inicializa o carrossel
-        updateCarousel();
-    });
-</script>

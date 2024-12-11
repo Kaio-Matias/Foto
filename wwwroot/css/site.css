@@ -29,3 +29,73 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* Contêiner principal do carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 26px); /* Altura do carrossel, descontando o header */
+    overflow: hidden; /* Esconde as imagens fora do contêiner */
+    display: flex;
+    justify-content: center; /* Centraliza o carrossel dentro da tela */
+    align-items: center;
+    background-color: #000; /* Fundo preto para o carrossel */
+}
+
+/* Faixa rolante das imagens */
+.carousel-track {
+    display: flex;
+    width: calc(200% + 10px); /* Duplicado para o loop contínuo */
+    animation: scroll 50s linear infinite; /* Animação contínua com duração de 30 segundos */
+}
+
+/* Estilização das imagens */
+.carousel-img {
+    flex-shrink: 0; /* Garante que as imagens não encolham */
+    width: 400px; /* Cada imagem ocupa 100% da largura da tela */
+    height: 800px; /* Cada imagem ocupa toda a altura do carrossel */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+    margin: 0; /* Remove margens das imagens */
+}
+
+/* Animação contínua para o loop infinito */
+@keyframes scroll {
+    from {
+        transform: translateX(0); /* Começa com todas as imagens visíveis na tela */
+    }
+
+    to {
+        transform: translateX(-50%); /* Move o conjunto de imagens para a esquerda */
+    }
+}}
