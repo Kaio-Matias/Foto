@@ -99,3 +99,67 @@ body {
         transform: translateX(-50%); /* Move o conjunto de imagens para a esquerda */
     }
 }
+.h2 {
+    font-family: 'KoPub Batang', serif;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 75px;
+    color: #978D8D;
+}
+.ensaios-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.ensaio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.ensaios {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    padding: 0;
+   
+}
+
+.ensaio-titulo {
+    font-family: 'KoPub Batang', serif;
+    font-size: 18px;
+    text-align: center;
+    color: #978D8D;
+}
+/* CSS corrigido */
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.button-more-post {
+    padding: 10px 20px;
+    text-align: center;
+    font-family: 'KoPub Batang',serif;
+    border: 1px solid #978D8D;
+    color: #978D8D;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+ .button-more-post:hover {
+        background-color: #978D8D;
+        color: white;
+ }
+.titulo {
+    text-align: center;
+    font-family: 'KoPub Batang',serif;
+    color: #978D8D;
+    padding-top: 60px;
+}
