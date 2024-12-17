@@ -65,7 +65,7 @@ body {
 .carousel-container {
     position: relative;
     width: 100%;
-    height: calc(100vh - 26px); /* Altura do carrossel, descontando o header */
+    height: calc(100vh - 200px); /* Altura do carrossel, descontando o header */
     overflow: hidden; /* Esconde as imagens fora do contêiner */
     display: flex;
     justify-content: center; /* Centraliza o carrossel dentro da tela */
@@ -157,9 +157,164 @@ body {
         background-color: #978D8D;
         color: white;
  }
+/* Estilos dos Feedbacks */
+.feedback-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .titulo {
     text-align: center;
-    font-family: 'KoPub Batang',serif;
+    font-family: 'KoPub Batang', serif;
     color: #978D8D;
     padding-top: 60px;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.feedback-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+    .feedback-row.reverse {
+        flex-direction: row-reverse;
+    }
+
+.img-feedback {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.feedback-txt {
+    font-family: 'KoPub Batang', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+    flex: 1;
+}
+
+.feedback-row:nth-child(even) .feedback-txt {
+    text-align: right;
+}
+
+.feedback-row:nth-child(odd) .feedback-txt {
+    text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .feedback-row,
+    .feedback-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feedback-txt {
+        text-align: center !important;
+    }
+
+    .img-feedback {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* Estilos para a seção de contato e Instagram */
+.contato-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 40px;
+}
+
+.instagram-section, .info-section {
+    padding: 20px;
+}
+
+.instagram-section {
+    flex: 2;
+}
+
+.info-section {
+    flex: 1;
+}
+
+.section-title-center {
+    font-family: 'KoPub Batang', serif;
+    color: #978D8D;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.instagram-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.instagram-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-text {
+    font-family: 'KoPub Batang', serif;
+    color: #978D8D;
+    font-size: 16px;
+    margin: 0;
+    text-align: left;
+}
+
+.orcamento-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #978D8D;
+    color: #978D8D;
+    font-family: 'KoPub Batang', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+    .orcamento-btn:hover {
+        background-color: #978D8D;
+        color: white;
+    }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-container {
+        flex-direction: column;
+    }
+
+    .instagram-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .instagram-img {
+        width: 150px;
+        height: 150px;
+    }
 }
